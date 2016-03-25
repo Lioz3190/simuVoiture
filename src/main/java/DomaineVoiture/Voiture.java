@@ -42,6 +42,8 @@ public class Voiture extends Observable {
 		return x;
 	}
 
+	public int getY() { return y; }
+
 	public void accelerer() {
 		if (vitesseMetreSeconde < 100)
 			vitesseMetreSeconde += 10;	
@@ -61,9 +63,17 @@ public class Voiture extends Observable {
 	}
 
 	public void inverserDirection() {
-		directionEnDegres +=180 ;
+		directionEnDegres += 180 ;
 		directionEnDegres = directionEnDegres % 360;
 		
+	}
+
+	public void directionDroite(){
+		directionEnDegres += 90 ;
+	}
+
+	public void directionGauche(){
+		directionEnDegres -= 90 ;
 	}
 
 	public Object getDirection() {

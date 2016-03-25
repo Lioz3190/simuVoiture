@@ -1,6 +1,6 @@
 package AppliSimu;
 
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,7 +14,9 @@ public class CommandeVoiture extends JPanel implements ActionListener{
 	
 	private JButton boutonAccelerer;
 	private JButton boutonInverserDirection;
+	private JButton droite , gauche;
 	private Voiture maVoiture;
+	private IHMRoute route;
 	
 	
 	public CommandeVoiture (JFrame fenetre, Voiture maVoiture) {
@@ -28,6 +30,14 @@ public class CommandeVoiture extends JPanel implements ActionListener{
 
 		boutonInverserDirection = new JButton("Changer direction");
 		boutonInverserDirection.addActionListener(this);
+
+		droite = new JButton("Droite");
+		droite.addActionListener(this);
+
+		gauche = new JButton("Gauche");
+		gauche.addActionListener(this);
+		this.add(gauche);
+		this.add(droite);
 		this.add(boutonInverserDirection);
 
 		fenetre.add(this);
@@ -40,8 +50,12 @@ public class CommandeVoiture extends JPanel implements ActionListener{
 		Object bouton = event.getSource();
 		if (bouton == boutonAccelerer)
 			maVoiture.accelerer();
-		else
+		else if ( bouton == boutonInverserDirection )
 			maVoiture.inverserDirection();
+		else if ( bouton == droite)
+			maVoiture.directionDroite();
+		else
+			maVoiture.directionGauche();
 	}
 	
 

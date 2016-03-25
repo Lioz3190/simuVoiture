@@ -24,7 +24,7 @@ public class IHMVoiture extends JFrame implements Observer{
 		this.setSize(505, 505);
 		setLayout(new BorderLayout());
 		add(this.maCommandeVoiture = new CommandeVoiture(this, maVoiture),BorderLayout.NORTH);
-		add(new IHMRoute(0,223,this.getWidth()),BorderLayout.CENTER);
+		add(new IHMRoute(0,maVoiture.getY()-63,this.getWidth()),BorderLayout.CENTER);
 		this.setVisible(true);
 
 	}
@@ -63,7 +63,7 @@ public class IHMVoiture extends JFrame implements Observer{
 	private void dessinerVoiture(Graphics contexteGraphique) {
 		int xMetres = maVoiture.getX();
 		int xPixel = calculerPositionPixels(xMetres);
-		contexteGraphique.fillRect(xPixel, 300, 30, 15);
+		contexteGraphique.fillRect(xPixel,maVoiture.getY(), 30, 15);
 	}
 	
 }

@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import DomaineRoute.Route;
 import DomaineVoiture.Voiture;
 
 public class IHMVoiture extends JFrame implements Observer{
@@ -24,7 +25,7 @@ public class IHMVoiture extends JFrame implements Observer{
 		this.setSize(505, 505);
 		setLayout(new BorderLayout());
 		add(this.maCommandeVoiture = new CommandeVoiture(this, maVoiture),BorderLayout.NORTH);
-		add(new IHMRoute(0,maVoiture.getY()-63,this.getWidth()),BorderLayout.CENTER);
+		add(new IHMRoute(new Route(0,maVoiture.getY()-63,this.getWidth())),BorderLayout.CENTER);
 		this.setVisible(true);
 
 	}

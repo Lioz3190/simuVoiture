@@ -18,6 +18,7 @@ public class IHMRoute extends JComponent {
 
     public void initGraphic(){
         this.repaint();
+
     }
     public void paint(Graphics contexteGraphique) {
         super.paint(contexteGraphique);

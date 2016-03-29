@@ -48,6 +48,7 @@ public class Voiture extends Observable {
 		if (vitesseMetreSeconde < 100)
 			vitesseMetreSeconde += 10;	
 	}
+	public void arreter(){ vitesseMetreSeconde = 0 ; }
 
 	public Object getVitesse() {
 		return vitesseMetreSeconde;
